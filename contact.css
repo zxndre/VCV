@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poopins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poopins', sans-serif;
+}
+
+body {
+    color: #ededed;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    position: relative;
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+/* Media query for tablets (screens between 600px and 1024px) */
+@media (max-width: 1024px) {
+    .header {
+        padding: 15px 5%;
+    }
+    .navbar a {
+        font-size: 16px;
+        margin-left: 20px;
+    }
+}
+
+/* Media query for mobile phones (screens up to 600px) */
+@media (max-width: 600px) {
+    .header {
+        padding: 10px 2%;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar a {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+}
