@@ -8,8 +8,12 @@
 }
 
 body {
+    height: 100vh;
     color: #ededed;
     background-color: #081b29;
+    background-size: cover;
+    display: flex;
+    align-items: center;
 }
 
 .header {
@@ -59,6 +63,72 @@ body {
     color: #00abf0;
 }
 
+.contact-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    flex: 1;
+    max-width: 300px;
+    height: 140px;
+    background-color: #00abf0;
+    margin: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    font-size: 32px;
+    color: #081b29;
+    transition: .3s linear;
+
+}
+
+.card:hover .icon {
+    transform: scale(4);
+    opacity: 0;
+}
+
+.card-content h3,
+.card-content span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+}
+
+
+.card-content h3 {
+    top: 20px;
+    text-transform: uppercase;
+    color: #081b29;
+}
+
+.card-content span {
+    bottom: 20px;
+    color: #ededed;
+    font-weight: 500;
+}
+
+.card:hover h3 {
+    opacity: 1;
+    top: 46px;
+    transition: 0.3s linear 0.3s;
+}
+
+.card:hover span {
+    opacity: 1;
+    bottom: 46px;
+    transition: 0.3s linear 0.3s;
+}
+
 @keyframes showRight {
     100% {
         width: 0;
@@ -89,5 +159,12 @@ body {
     .navbar a {
         font-size: 14px;
         margin: 10px 0;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .card {
+        flex: 100%;
+        max-width: 500px;
     }
 }
