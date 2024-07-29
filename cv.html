@@ -33,8 +33,8 @@
         </div>
         <div class="cv-section">
             <h2>Work Experience</h2>
-            <h3>Bartende/Waiter, The Farm Lifestyle Centre</h3>
-            <p><strong>Year:</strong> 2021 - 2021</p>
+            <h3>Bartender/Waiter, The Farm Lifestyle Centre</h3>
+            <p><strong>Year:</strong> January 2022 - June 2022</p>
             <p><strong>Responsibilities:</strong></p>
             <ul>
                 <li>Bartending</li>
@@ -45,37 +45,68 @@
         <div class="cv-section">
             <h2>Skills</h2>
             <ul>
-                <li>Proficient in HTML, CSS, JavaScript
+                <li>During my second year of University, I was part of a team that developed an encryption project, using Java, that utilizes the Exclusive OR cipher.</li>
+                <li>My coding languages include:
                     <ol>
-                        <li>Experienced in creating responsive designs</li>
-                        <li>Knowledgeable in front-end frameworks like React and Angular</li>
-                        <li>Strong understanding of web standards and accessibility</li>
+                        <li>Java</li>
+                        <li>C#</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>Delphi</li>
+                        <li>SQL</li>
                     </ol>
                 </li>
-                <li>Experience with React and Angular
+                <li>Basic understanding of the following coding languages:
                     <ol>
-                        <li>Built dynamic web applications using React</li>
-                        <li>Implemented complex state management with Redux</li>
-                        <li>Utilized Angular for developing single-page applications</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
                     </ol>
                 </li>
-                <li>Strong problem-solving skills
-                    <ol>
-                        <li>Ability to debug and resolve issues efficiently</li>
-                        <li>Experience in optimizing performance of web applications</li>
-                        <li>Proficient in using version control systems like Git</li>
-                    </ol>
-                </li>
-                <li>Excellent communication and teamwork abilities
-                    <ol>
-                        <li>Effective in presenting technical concepts to non-technical stakeholders</li>
-                        <li>Collaborated with cross-functional teams on various projects</li>
-                        <li>Experience in leading and participating in team discussions</li>
-                    </ol>
-                </li>
+                <li>Proven leadership abilities during group projects through making critical decisions about roles and deadlines.</li>
+                <li>Bilingual proficiency in English and Afrikaans, including reading, writing, and oral communication.</li>
+                <li>Proficiency in Microsoft Word, Excel, Access, and PowerPoint for efficient document creation, data management, and presentations.</li>
+                <li>Basic understanding of the usage of XAMP.</li>
+                <li>Proficient knowledge of the usage of GitHub.</li>
+                <li>Proficiency in Adobe Premiere, Photoshop, Lightroom and After Effects.</li>
             </ul>
         </div>
     </section>
+    
+    
+    <script>
+        let lastScrollTop = 0; // Keeps track of the last scroll position
+        let scrollTimer = null; // Timer for delaying the background color change
+        const navbar = document.querySelector('.header');
+    
+        window.addEventListener('scroll', () => {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (scrollTimer !== null) {
+                clearTimeout(scrollTimer); // Clear any existing timer
+            }
+    
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                navbar.style.top = "-80px"; // Adjust this value if your navbar's height is different
+                navbar.classList.remove('scrolled'); // Remove the scrolled class for default background
+            } else {
+                // Scrolling up
+                navbar.style.top = "0";
+                navbar.classList.add('scrolled'); // Add the scrolled class for darker background
+            }
+    
+            // Set a delay to revert the background color to normal when scrolling stops at the top
+            if (currentScroll <= 0) {
+                scrollTimer = setTimeout(() => {
+                    navbar.classList.remove('scrolled'); // Remove the scrolled class when at the top after a delay
+                }, 400); // 300ms delay
+            }
+    
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+        });
+    </script>
+     
+    
     
 </body>
 </html>
